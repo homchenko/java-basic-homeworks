@@ -18,5 +18,8 @@ public class MainApp {
         time = dog.swim(10);
         System.out.println("Время: " + time);
         dog.printInfo();
+        horse.printInfo();
+        horse.swim(6);
+        horse.printInfo();
     }
 }

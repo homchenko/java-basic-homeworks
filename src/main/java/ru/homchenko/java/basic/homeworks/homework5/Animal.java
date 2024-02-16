@@ -6,7 +6,8 @@ public abstract class Animal {
     protected int swimmingSpeed;
     protected int stayingPower;
 
-    public Animal(String name, int stayingPower, int runningSpeed) {
+    //Абстрактные классы не должны иметь общедоступных конструкторов. Достаточно модификатора protected!!!
+    protected Animal(String name, int stayingPower, int runningSpeed) {
         this.name = name;
         this.stayingPower = stayingPower;
         this.runningSpeed = runningSpeed;

@@ -1,7 +1,5 @@
 package ru.homchenko.java.basic.homeworks.homework5;
 
-import java.sql.SQLOutput;
-
 public class Horse extends Animal {
     public Horse(String name, int stayingPower, int runningSpeed, int swimmingSpeed) {
         super(name, stayingPower, runningSpeed);
