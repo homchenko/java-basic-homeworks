@@ -22,6 +22,7 @@ public class Cat {
         this.appetite = appetite;
         this.satiety = false;
     }
+
     public void printInfo() {
         String isSatiety;
         if (this.isSatiety()) {
