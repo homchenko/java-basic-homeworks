@@ -2,6 +2,7 @@ package ru.homchenko.java.basic.homeworks.homework9;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class MainApp {
     public static void main(String[] args) {
@@ -22,49 +23,48 @@ public class MainApp {
         System.out.println(findYoungerEmployee(employeeArrayList));
     }
 
-    public static ArrayList fillArrayList(int min, int max) {
-        ArrayList<Integer> integerArrayList = new ArrayList<>();
+    public static List<Integer> fillArrayList(int min, int max) {
+        List<Integer> integerArrayList = new ArrayList<>();
         for (int i = min; i <= max; i++) {
             integerArrayList.add(i);
         }
         return integerArrayList;
     }
 
-    public static int sumListsElements(ArrayList<Integer> integerArrayList) {
+    public static int sumListsElements(List<Integer> integerArrayList) {
         int num = 5;
         int sum = 0;
-        for (int i = 0; i < integerArrayList.size(); i++) {
-            if (integerArrayList.get(i) > num) {
-                sum += integerArrayList.get(i);
-            }
+        for (Integer i : integerArrayList) {
+            if (i > num)
+                sum += i;
         }
         return sum;
     }
 
-    public static ArrayList<Integer> rewriteArrayList(ArrayList<Integer> integerArrayList, int num) {
+    public static List<Integer> rewriteArrayList(List<Integer> integerArrayList, int num) {
         for (int i = 0; i < integerArrayList.size(); i++) {
             integerArrayList.set(i, num);
         }
         return integerArrayList;
     }
 
-    public static ArrayList<Integer> increaseElementsOfArrList(ArrayList<Integer> integerArrayList, int num) {
+    public static List<Integer> increaseElementsOfArrList(List<Integer> integerArrayList, int num) {
         for (int i = 0; i < integerArrayList.size(); i++) {
             integerArrayList.set(i, integerArrayList.get(i) + num);
         }
         return integerArrayList;
     }
 
-    public static ArrayList<String> getNames(ArrayList<Employee> employeeArrayList) {
-        ArrayList<String> namesArrayList = new ArrayList<>();
+    public static List<String> getNames(List<Employee> employeeArrayList) {
+        List<String> namesArrayList = new ArrayList<>();
         for (Employee employee : employeeArrayList) {
             namesArrayList.add(employee.getName());
         }
         return namesArrayList;
     }
 
-    public static ArrayList<String> getYounger(ArrayList<Employee> employeeArrayList, int minAge) {
-        ArrayList<String> namesArrayList = new ArrayList<>();
+    public static List<String> getYounger(List<Employee> employeeArrayList, int minAge) {
+        List<String> namesArrayList = new ArrayList<>();
         for (Employee employee : employeeArrayList) {
             if (employee.getAge() >= minAge)
                 namesArrayList.add(employee.getName());
@@ -72,7 +72,7 @@ public class MainApp {
         return namesArrayList;
     }
 
-    public static boolean checkAverageAge(ArrayList<Employee> employeeArrayList, int minAverageAge) {
+    public static boolean checkAverageAge(List<Employee> employeeArrayList, int minAverageAge) {
         int average = 0;
         for (Employee employee : employeeArrayList) {
             average += employee.getAge();
@@ -80,11 +80,11 @@ public class MainApp {
         return average / employeeArrayList.size() > minAverageAge;
     }
 
-    public static Employee findYoungerEmployee(ArrayList<Employee> employeeArrayList) {
+    public static Employee findYoungerEmployee(List<Employee> employeeArrayList) {
         Employee youngerEmployee = employeeArrayList.get(0);
-        for (int i = 1; i < employeeArrayList.size(); i++) {
-            if (employeeArrayList.get(i).getAge() < youngerEmployee.getAge())
-                youngerEmployee = employeeArrayList.get(i);
+        for (Employee employee : employeeArrayList) {
+            if (employee.getAge() < youngerEmployee.getAge())
+                youngerEmployee = employee;
         }
         return youngerEmployee;
     }
