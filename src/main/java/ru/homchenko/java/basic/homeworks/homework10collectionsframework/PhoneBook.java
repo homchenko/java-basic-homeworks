@@ -1,4 +1,4 @@
-package ru.homchenko.java.basic.homeworks.homework10_CollectionsFramework;
+package ru.homchenko.java.basic.homeworks.homework10collectionsframework;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -26,10 +26,7 @@ public class PhoneBook {
     }
 
     public boolean containsPhoneNumber(String number) {
-        for (String num : this.recordsMap.keySet()) {
-            return num.equals(number);
-        }
-        return false;
+        return recordsMap.containsKey(number);
     }
 
     public void printInfo() {

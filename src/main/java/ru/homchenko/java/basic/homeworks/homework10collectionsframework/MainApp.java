@@ -1,4 +1,4 @@
-package ru.homchenko.java.basic.homeworks.homework10_CollectionsFramework;
+package ru.homchenko.java.basic.homeworks.homework10collectionsframework;
 
 public class MainApp {
     public static void main(String[] args) {
