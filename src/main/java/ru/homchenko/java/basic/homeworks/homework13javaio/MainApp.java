@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class MainApp {
     public static void main(String[] args) {
-        File directory = new File(System.getProperty("user.dir"));
+        File directory = new File(".");
 
         if (checkDirectory(directory)) {
             System.out.println("Введите название файла: ");
