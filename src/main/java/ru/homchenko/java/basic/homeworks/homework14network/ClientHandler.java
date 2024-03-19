@@ -10,7 +10,7 @@ public class ClientHandler {
 
     private int clientFirstOperand;
     private int clientSecondOperator;
-    char clientOperator;
+    private char clientOperator;
 
     public ClientHandler(Socket clientSocket) throws IOException {
         this.clientSocket = clientSocket;
