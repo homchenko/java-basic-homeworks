@@ -20,7 +20,7 @@ public class Client {
                 int secondOp = scanner.nextInt();
 
                 exampleClient.send(firstOp, operator, secondOp);
-
+                exampleClient.get();
                 break;
             } catch (IOException e) {
                 throw new RuntimeException(e);
