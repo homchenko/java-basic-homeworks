@@ -12,7 +12,8 @@ public class Client {
             try (Socket socket = new Socket("localhost", 8080)) {
                 ExampleClient exampleClient = new ExampleClient(socket.getInputStream(), socket.getOutputStream());
 
-                System.out.println("Доступные операции: +, -, /, *\nВведите первый операнд: ");
+                exampleClient.get();
+                System.out.println("Введите первый операнд: ");
                 int firstOp = scanner.nextInt();
                 System.out.println("Введите оператор: ");
                 String operator = scanner.next();

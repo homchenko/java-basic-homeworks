@@ -10,6 +10,7 @@ public class Server {
         while (true) {
             Socket clientSocket = serverSocket.accept();
             ClientHandler clientHandler = new ClientHandler(clientSocket);
+            clientHandler.availableOperations();
             clientHandler.requestData();
             clientHandler.getResult();
         }

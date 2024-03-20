@@ -18,6 +18,10 @@ public class ClientHandler {
         this.dataOutputStream = new DataOutputStream(clientSocket.getOutputStream());
     }
 
+    public void availableOperations () throws IOException {
+        dataOutputStream.writeUTF("Доступные операции: +, -, /, *");
+        dataOutputStream.flush();
+    }
     public void requestData() throws IOException {
         clientFirstOperand = dataInputStream.readInt();
         clientOperator = dataInputStream.readChar();
