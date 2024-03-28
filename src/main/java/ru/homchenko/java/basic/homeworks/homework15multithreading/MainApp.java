@@ -3,7 +3,7 @@ package ru.homchenko.java.basic.homeworks.homework15multithreading;
 public class MainApp {
     public static void main(String[] args) throws InterruptedException {
         int l = 100_000_000;
-        double array2[] = new double[l];
+        double[] array2 = new double[l];
 
         long time1 = System.currentTimeMillis();
         createAndFillArr(0, l);
