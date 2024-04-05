@@ -1,0 +1,20 @@
+CREATE DATABASE TestsDB;
+
+USE TestsDB;
+
+
+CREATE TABLE [Questions]
+(
+    [IdQ] int IDENTITY(1,1) PRIMARY KEY,
+    [QuestionsText] varchar(50) NOT NULL
+);
+
+CREATE TABLE [Answers]
+(
+    [IdA] int IDENTITY(1,1) PRIMARY KEY,
+    [AnswersText] varchar(50) NOT NULL,
+    [IdQ] int NOT NULL,
+    [Correct] int NOT NULL, /* 0 and 1 */
+
+    CONSTRAINT [FK_A] FOREIGN KEY ([IdQ]) REFERENCES [Questions]([IdQ])
+);
