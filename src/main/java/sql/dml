@@ -1,0 +1,21 @@
+USE TestsDB;
+
+INSERT INTO Questions (QuestionsText) VALUES ('Some QuestionsText1');
+INSERT INTO Questions (QuestionsText) VALUES ('Some QuestionsText2');
+INSERT INTO Questions (QuestionsText) VALUES ('Some QuestionsText3');
+GO
+
+INSERT INTO ANSWERS (AnswersText, IdQ, Correct) VALUES ('Some AnswersText1', 1, 1);
+INSERT INTO ANSWERS (AnswersText, IdQ, Correct) VALUES ('Some AnswersText1', 1, 0);
+INSERT INTO ANSWERS (AnswersText, IdQ, Correct) VALUES ('Some AnswersText1', 1, 0);
+
+INSERT INTO ANSWERS (AnswersText, IdQ, Correct) VALUES ('Some AnswersText2', 2, 0);
+INSERT INTO ANSWERS (AnswersText, IdQ, Correct) VALUES ('Some AnswersText2', 2, 0);
+INSERT INTO ANSWERS (AnswersText, IdQ, Correct) VALUES ('Some AnswersText2', 2, 1);
+
+INSERT INTO ANSWERS (AnswersText, IdQ, Correct) VALUES ('Some AnswersText3', 3, 0);
+INSERT INTO ANSWERS (AnswersText, IdQ, Correct) VALUES ('Some AnswersText3', 3, 0);
+INSERT INTO ANSWERS (AnswersText, IdQ, Correct) VALUES ('Some AnswersText3', 3, 1);
+
+SELECT q.QuestionsText, a.IdQ, a.AnswersText, a.Correct FROM Questions q
+JOIN Answers a ON a.IdQ = q.IdQ
