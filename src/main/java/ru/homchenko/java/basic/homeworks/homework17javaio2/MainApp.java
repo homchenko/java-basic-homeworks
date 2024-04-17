@@ -18,10 +18,8 @@ public class MainApp {
             String line;
             String text = null;
             while ((line = bufferedReader.readLine()) != null) {
-                System.out.println(line);
                 text = text == null ? line : text + " " + line;
             }
-            System.out.println(text);
             System.out.println(countCharsSequence(text, subStr));
 
         } catch (IOException e) {
