@@ -30,6 +30,8 @@ public class Box<T extends Fruit> {
         return Math.abs(this.getWeight() - otherBox.getWeight()) < 0.0001;
     }
 
+    //Чтобы можно было перекидывать фрукты в коробку с "родительскими" фруктами, можно заменить аргумент на:
+    //public void transferFruitsTo(Box<? super T> otherBox)
     public void transferFruitsTo(Box<T> otherBox) {
         if (this == otherBox) {
             return;
