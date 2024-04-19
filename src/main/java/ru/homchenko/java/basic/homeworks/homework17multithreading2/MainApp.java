@@ -3,6 +3,7 @@ package ru.homchenko.java.basic.homeworks.homework17multithreading2;
 public class MainApp {
     private class ABCWriter {
         private char ch;
+
         public void writeA(int i) {
             ch = 'A';
             System.out.println(i + ") Print: " + ch);
@@ -36,10 +37,10 @@ public class MainApp {
         }).start();
     }
 
-    public void toA () {
+    public void toA() {
         synchronized (monitor) {
             try {
-                for (int i = 1; i <=5; i++) {
+                for (int i = 1; i <= 5; i++) {
                     while (threadOrder != 1) {
                         monitor.wait();
                     }
@@ -52,7 +53,8 @@ public class MainApp {
             }
         }
     }
-    public void toB () {
+
+    public void toB() {
         synchronized (monitor) {
             try {
                 for (int i = 1; i <= 5; i++) {
@@ -68,7 +70,8 @@ public class MainApp {
             }
         }
     }
-    public void toC () {
+
+    public void toC() {
         synchronized (monitor) {
             try {
                 for (int i = 1; i <= 5; i++) {
