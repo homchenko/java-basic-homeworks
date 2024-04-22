@@ -1,5 +1,8 @@
 package ru.homchenko.java.basic.homeworks.homework17multithreading2;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class MainApp {
     private class ABCWriter {
         private char ch;
@@ -26,15 +29,16 @@ public class MainApp {
 
     public static void main(String[] args) {
         MainApp mainAppObject = new MainApp();
-        new Thread(() -> {
+        ExecutorService executor = Executors.newFixedThreadPool(3);
+        executor.submit(() -> {
             mainAppObject.toA();
-        }).start();
-        new Thread(() -> {
+        });
+        executor.submit(() -> {
             mainAppObject.toB();
-        }).start();
-        new Thread(() -> {
+        });
+        executor.submit(() -> {
             mainAppObject.toC();
-        }).start();
+        });
     }
 
     public void toA() {
