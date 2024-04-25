@@ -1,5 +1,7 @@
 package ru.homchenko.java.basic.homeworks.homework18junit;
 
+import java.util.Arrays;
+
 public class MainApp {
     public static void main(String[] args) {
         int[] arr1 = {2, 2, 1, 1, 2, 2};
@@ -14,7 +16,7 @@ public class MainApp {
         int[] resultArr2 = elemAfterLastOne(arr2);
     }
 
-    public static int[] elemAfterLastOne(int [] arr) {
+    /*public static int[] elemAfterLastOne(int [] arr) {
         boolean foundOne = false;
         int oneIdx = -1;
         for (int i = 0; i < arr.length; i++) {
@@ -33,6 +35,14 @@ public class MainApp {
             oneIdx++;
         }
         return resultArr;
+    }*/
+    public static int[] elemAfterLastOne(int[] arr) {
+        for (int i = arr.length - 1; i >= 0; i--) {
+            if (arr[i] == 1) {
+                return Arrays.copyOfRange(arr, i + 1, arr.length);
+            }
+        }
+        throw new RuntimeException("В массиве нет единиц.");
     }
     public static boolean containsOneAndTwoOnly(int[] arr) {
         boolean containsOne = false;
